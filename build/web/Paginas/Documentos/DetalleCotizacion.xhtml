@@ -130,6 +130,11 @@
                                 <h:commandLink class="logout" action="#{usuarioControlador.cerrarSesion()}">Salir</h:commandLink>
                             </li>
                         </ul>
+                        <ul class="nav pull-right top-menu">
+                            <li>
+                                <h5 class="usuario"><span>Usuario: (</span>#{usuarioControlador.userLogueado()}<span>)</span></h5>
+                            </li>
+                        </ul> 
                     </h:form>
                 </div>
             </header>
@@ -162,22 +167,15 @@
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
 
-
-                        <!-- Usuario-->
-                        <h:form>
-                            <h5 class="centered">#{usuarioControlador.userLogueado()}</h5>
-                        </h:form>
-                        <!--Fin Usuario-->
-
                         <li><a href="../Principal/Principal.xhtml">Inicio</a></li>
                         <li><a href="ListaCompras.xhtml">Compras</a></li>
-                        <li><a href="">Ventas</a></li>
-                        <li><a href="">Compras</a></li>
-                        <li><a href="">Gastos</a></li>
-                        <li><a href="">Recibos de Caja</a></li>
-                        <li><a href="">Egresos</a></li>
-                        <li><a href="">Notas Credito</a></li>
-                        <li><a href="">Reportes</a></li>
+                        <!-- <li><a href="">Ventas</a></li>
+                         <li><a href="">Compras</a></li>
+                         <li><a href="">Gastos</a></li>
+                         <li><a href="">Recibos de Caja</a></li>
+                         <li><a href="">Egresos</a></li>
+                         <li><a href="">Notas Credito</a></li>
+                         <li><a href="">Reportes</a></li>-->
 
                     </ul>
                     <!-- sidebar menu end-->
@@ -248,7 +246,7 @@
 
 
                                 <div class="form-group centrar form-group"> <!-- Submit Button -->
-                                    <h:commandButton class="btn boton-color " value="Registrar" action="#{detalleCotizacionControlador.registrar()}"></h:commandButton>
+                                    <h:commandButton class="btn boton-registrar " value="Registrar" action="#{detalleCotizacionControlador.registrar()}"></h:commandButton>
                                 </div>   
 
 
