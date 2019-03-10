@@ -238,7 +238,7 @@
                                         </p:column>
                                         <p:column>
                                             <f:facet name="header">
-                                                <h:outputText value="Inform."/>
+                                                <h:outputText value="Información"/>
                                             </f:facet>
                                             <b:commandButton class="fa fa-search boton-pdf "  action="#{proveedorControlador.Consultauno(item)}">
                                                 <f:ajax render="@form"/>
@@ -258,13 +258,13 @@
                                         </p:column>
                                     </b:dataTable>
                                     
-                                    <h:panelGroup layout="block" styleClass="popup-panel-overlay" rendered="#{insumoControlador.showpopup}" >
+                                    <h:panelGroup layout="block" styleClass="popup-panel-overlay" rendered="#{proveedorControlador.showpopup}" >
 
                                         <div class="modal-dialog" role="document" >
                                         <div class="modal-content">
                                         <div class="modal-header">
                                             <h4 class="modal-title">Información</h4>
-                                            <b:commandButton class="close" action="#{insumoControlador.cerrar()}" >
+                                            <b:commandButton class="close" action="#{proveedorControlador.cerrar()}" >
                                                 <span aria-hidden="true">&times;</span>
                                                 <f:ajax render="@form"/>
                                             </b:commandButton> 
@@ -272,17 +272,29 @@
                                         <div class="modal-body">
                                             <div class="border">
                                                 <h:outputText  class="nombreCampo" value="Codigo: "/>
-                                            <h:outputText class="datoCampo" value="#{insumoControlador.insumoSeleccionado.idinsumo}"></h:outputText>
+                                                <h:outputText class="datoCampo" value="#{proveedorControlador.proveedorSeleccionado.idproveedor}"></h:outputText>
                                             </div>
-                                           
                                             <div class="border">
-                                            <h:outputText class="nombreCampo" value="Estado: "/>
-                                            <h:outputText class="datoCampo" value="#{insumoControlador.insumoSeleccionado.estadoinsumo eq 1 ? 'ACTIVO' : ''}" rendered="#{insumoControlador.insumoSeleccionado.estadoinsumo eq 1}" />
-                                            <h:outputText class="datoCampo" value="#{insumoControlador.insumoSeleccionado.estadoinsumo eq 2 ? 'INACTIVO' : ''}" rendered="#{insumoControlador.insumoSeleccionado.estadoinsumo eq 2}" />
+                                                <h:outputText  class="nombreCampo" value="Tercero: "/>
+                                                <h:outputText class="datoCampo" value="#{proveedorControlador.proveedorSeleccionado.terceroid.primernombre} #{proveedorControlador.proveedorSeleccionado.terceroid.primerapellido}"></h:outputText>
                                             </div>
+                                            <div class="border">
+                                                <h:outputText  class="nombreCampo" value="Nombre Representante: "/>
+                                                <h:outputText class="datoCampo" value="#{proveedorControlador.proveedorSeleccionado.nombrerepresentante}"></h:outputText>
+                                            </div>
+                                            <div class="border">
+                                                <h:outputText  class="nombreCampo" value="Teléfono: "/>
+                                                <h:outputText class="datoCampo" value="#{proveedorControlador.proveedorSeleccionado.telefonoproveedor}"></h:outputText>
+                                            </div>
+                                            <div class="border">
+                                                <h:outputText  class="nombreCampo" value="Ciudad: "/>
+                                                <h:outputText class="datoCampo" value="#{proveedorControlador.proveedorSeleccionado.ciudadid.ciudadnombre}"></h:outputText>
+                                            </div>
+                                            
+                                            
                                         </div>
                                         <div class="modal-footer">
-                                            <b:commandButton class="boton-cancelar" action="#{insumoControlador.cerrar()}" value="Cerrar" onkeypress="">
+                                            <b:commandButton class="boton-cancelar" action="#{proveedorControlador.cerrar()}" value="Cerrar" onkeypress="">
                                                 <f:ajax render="@form"/>
                                             </b:commandButton> 
                                         </div>
