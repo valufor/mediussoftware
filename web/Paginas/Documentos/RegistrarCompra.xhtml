@@ -129,6 +129,11 @@
                                 <h:commandLink class="logout" action="#{usuarioControlador.cerrarSesion()}">Salir</h:commandLink>
                             </li>
                         </ul>
+                        <ul class="nav pull-right top-menu">
+                            <li>
+                                <h5 class="usuario"><span>Usuario: (</span>#{usuarioControlador.userLogueado()}<span>)</span></h5>
+                            </li>
+                        </ul> 
                     </h:form>
                 </div>
             </header>
@@ -161,23 +166,15 @@
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
 
-
-                        <!-- Usuario-->
-                        <h:form>
-                            <h5 class="centered">#{usuarioControlador.userLogueado()}</h5>
-                        </h:form>
-                        <!--Fin Usuario-->
-
                         <li><a href="../Principal/Principal.xhtml">Inicio</a></li>
                         <li><a href="ListaCompras.xhtml">Compras</a></li>
-                        <li><a href="DetalleCompra.xhtml">Detalle compra</a></li>
-                        <li><a href="">Ventas</a></li>
+                        <!--<li><a href="">Ventas</a></li>
                         <li><a href="">Compras</a></li>
                         <li><a href="">Gastos</a></li>
                         <li><a href="">Recibos de Caja</a></li>
                         <li><a href="">Egresos</a></li>
                         <li><a href="">Notas Credito</a></li>
-                        <li><a href="">Reportes</a></li>
+                        <li><a href="">Reportes</a></li>-->
 
                     </ul>
                     <!-- sidebar menu end-->
@@ -200,7 +197,7 @@
                                 <h3><a href="../Principal/Principal.xhtml">Principal</a> /Documentos /<a href="ListaCompras.xhtml">Compras</a> /Registro Compras</h3>
                             </div>
                             <!--custom chart end-->
-
+<b:messages id="messages" showDetail="true" ></b:messages>
                             <h:form>
 
                                 <div class="form-group centrar"> 
@@ -222,7 +219,8 @@
                                     </h:selectOneMenu>
                                 </div>
                                 <div class="form-group centrar form-group"> <!-- Submit Button -->
-                                    <h:commandButton class="btn boton-color " value="Registrar" action="#{comprasControlador.registrar()}" onclick="alert('Compra Registrada Exitosamente')"></h:commandButton>
+                                    <h:commandButton class="btn boton-registrar " value="Registrar" action="#{comprasControlador.registrar()}" onclick="alert('Compra Registrada Exitosamente')"></h:commandButton>
+                                    <a class="btn boton-cancelar " href="ListaCompras.xhtml">Cancelar</a>
                                 </div>   
 
 
@@ -235,9 +233,6 @@
                     <!-- /row -->
 
                     <!-- /col-lg-9 END SECTION MIDDLE -->
-                    <div>
-                        <h:messages style="color:red;margin:8px;"/>
-                    </div>
 
                     <!-- /row -->
                 </section>
