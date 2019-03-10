@@ -131,6 +131,11 @@
                                 <h:commandLink class="logout" action="#{usuarioControlador.cerrarSesion()}">Salir</h:commandLink>
                             </li>
                         </ul>
+                        <ul class="nav pull-right top-menu">
+                            <li>
+                                <h5 class="usuario"><span>Usuario: (</span>#{usuarioControlador.userLogueado()}<span>)</span></h5>
+                            </li>
+                        </ul> 
                     </h:form>
                 </div>
             </header>
@@ -163,19 +168,15 @@
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu" >
 
-                        <!-- Usuario-->
-                        <h5 class="centered">Oscar aguirre</h5>
-                        <!--Fin Usuario-->
-                        <br/>
                         <li><a href="../Principal/Principal.xhtml">Inicio</a></li>
                         <li><a href="ListaCompras.xhtml">Compras</a></li>
-                        <li><a href="">Ventas</a></li>
+                       <!-- <li><a href="">Ventas</a></li>
                         <li><a href="">Compras</a></li>
                         <li><a href="">Gastos</a></li>
                         <li><a href="">Recibos de Caja</a></li>
                         <li><a href="">Egresos</a></li>
                         <li><a href="">Notas Credito</a></li>
-                        <li><a href="">Reportes</a></li>
+                        <li><a href="">Reportes</a></li>-->
                     </ul>
                     <!-- sidebar menu end-->
                 </div>
@@ -194,7 +195,6 @@
                             </div>
                             <div class="padding-botton-15 display-inline">
                                 <a href="RegistraCotizacion.xhtml"><button  class="boton-color-azul no-border margin-right"><span class="fa fa-plus padding-5"></span></button></a>
-                                <a href=""><button  class="boton-color-azul no-border"><span class="fa fa-cloud-upload padding-5"></span></button></a>
                             </div>
                             <f:view>
                                 <h:form>
@@ -205,13 +205,13 @@
                                                  columnVisibility="true">
                                         <p:column>
                                             <f:facet name="header">
-                                                <h:outputText value="Idcotizacion"/>
+                                                <h:outputText value="Código"/>
                                             </f:facet>
                                             <h:outputText value="#{item.idcotizacion}"/>
                                         </p:column>
                                         <p:column>
                                             <f:facet name="header">
-                                                <h:outputText value="Fechacreacioncotizacion"/>
+                                                <h:outputText value="Fecha Creación"/>
                                             </f:facet>
                                             <h:outputText value="#{item.fechacreacioncotizacion}">
                                                 <f:convertDateTime pattern="MM/dd/yyyy" />
@@ -219,7 +219,7 @@
                                         </p:column>
                                         <p:column>
                                             <f:facet name="header">
-                                                <h:outputText value="Proveedorid"/>
+                                                <h:outputText value="Proveedor"/>
                                             </f:facet>
                                             <h:outputText value="#{item.proveedorid.nombrerepresentante}"/>
                                         </p:column>
@@ -227,7 +227,7 @@
                                             <f:facet name="header">
                                                 <h:outputText value="Información"/>
                                             </f:facet>
-                                            <b:commandButton class="fa fa-search boton-pdf "  action="#{cotizacionControlador.Consultauno(item)}">
+                                            <b:commandButton class="fa fa-search boton-pdf"  action="#{cotizacionControlador.Consultauno(item)}">
                                                 <f:ajax render="@form"/>
                                             </b:commandButton> 
                                         </p:column>
@@ -235,7 +235,7 @@
                                             <f:facet name="header">
                                                 <h:outputText value="Editar"/>
                                             </f:facet>
-                                            <b:commandButton class="fa fa-pencil color-naranja" action="#{cotizacionControlador.preEditar(item)}"></b:commandButton>
+                                            <b:commandButton class="fa fa-pencil boton-color-verde" action="#{cotizacionControlador.preEditar(item)}"></b:commandButton>
                                         </p:column>
                                         <p:column>
                                             <f:facet name="header">
@@ -339,7 +339,6 @@
             <!--footer end-->
         </section>
         <!-- js placed at the end of the document so the pages load faster -->
-        <script src="../../Recursos/js/jquery.js"></script>
         <script src="../../Recursos/js/bootstrap.js"></script>
         <script  type="text/javascript" src="../../Recursos/js/jquery.dcjqaccordion.2.7.js"></script>
         <script src="../../Recursos/js/jquery.scrollTo.min.js"></script>
